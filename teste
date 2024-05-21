@@ -1,0 +1,14 @@
+package br.unipar;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+public class ContaCorrenteTeste {
+    public void testeSaqueMaiorSaldoContaCorrente(){
+        ContaCorrente conta = new ContaCorrente();
+        conta.depositar(3000d);
+        boolean validacao = conta.saque(4500d);
+        assertFalse(validacao);
+        assertEquals(3000, conta.obterSaldo(), 0.001);
+    }
+}
